@@ -1,20 +1,20 @@
-const formEl = document.querySelector('.login-form')
+const formItem = document.querySelector('.login-form')
 
-formEl.addEventListener('submit', onControlsFilingAndSubmissionFormData)
+formItem.addEventListener('submit', onControlsFilingAndSubmissionFormData)
 
 function onControlsFilingAndSubmissionFormData(event) {
     event.preventDefault()
-    const formElements = event.currentTarget.elements
-    const inputEmail = [...formElements.email.value]
-    const inputPass = [...formElements.password.value]
-    const email = formElements.email.value
-    const password = formElements.password.value
+    const formElem = event.currentTarget.elements
+    const inputEmail = [...formElem.email.value]
+    const inputPass = [...formElem.password.value]
+    const email = formElem.email.value
+    const password = formElem.password.value
 
     if (inputPass.length <= 0 || inputEmail.length <= 0) {
         alert('Все поля должны быть заполнены!')
     } else {
         const formData = { email, password }
-        formEl.reset()
+        formItem.reset()
 
         console.log(formData)
     }
