@@ -5,11 +5,11 @@ const allElem = document.querySelectorAll('.item ul');
 
 console.log(`Number of categories: ${allCategories.length}`)
 
-console.log(`Category: ${titleCategories[0].textContent}`)
-console.log(`Elements: ${allElem[0].children.length}`)
-
-console.log(`Category: ${titleCategories[1].textContent}`)
-console.log(`Elements: ${allElem[1].children.length}`)
-
-console.log(`Category: ${titleCategories[2].textContent}`)
-console.log(`Elements: ${allElem[2].children.length}`)
+titleCategories.forEach((element, index) => {
+	console.log(`Category: ${element.textContent}`)
+	allElem.forEach((element, i) => {
+		if (index === i) {
+			console.log(`Elements: ${element.children.length}`)
+		}
+	})
+})
